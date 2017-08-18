@@ -113,6 +113,27 @@ class nsswitch (
       $default_group              = 'files'
       $default_hosts              = 'files dns'
       $default_automount          = 'files'
+      $default_services           = 'db files'
+      $default_bootparams         = 'files'
+      $default_aliases            = 'files'
+      $default_publickey          = 'files'
+      $default_netgroup           = 'files'
+      $default_protocols          = 'db files'
+      $default_ethers             = 'db files'
+      $default_rpc                = 'db files'
+      $default_nsswitch_ipnodes   = 'files dns'
+      $default_nsswitch_printers  = 'user files'
+      $default_nsswitch_auth_attr = 'files'
+      $default_nsswitch_prof_attr = 'files'
+      $default_nsswitch_project   = 'files'
+    }
+    'Gentoo': {
+      $default_passwd             = 'compat'
+      $default_sudoers            = 'files'
+      $default_shadow             = 'compat'
+      $default_group              = 'compat'
+      $default_hosts              = 'files dns'
+      $default_automount          = 'files'
       $default_services           = 'files'
       $default_bootparams         = 'files'
       $default_aliases            = 'files'
@@ -128,7 +149,7 @@ class nsswitch (
       $default_nsswitch_project   = 'files'
     }
     default: {
-      fail("nsswitch supports osfamilies Debian, RedHat, Solaris and Suse. Detected osfamily is <${::osfamily}>.")
+      fail("nsswitch supports osfamilies Debian, RedHat, Solaris, Gentoo and Suse. Detected osfamily is <${::osfamily}>.")
     }
   }
 
